@@ -41,7 +41,7 @@ def extract_clinical_group_ids(json_directory: str) -> list:
                 
                 if orpha_code and label:
                     clinical_group_entries.append({
-                        "ORPHAcode": orpha_code,
+                        "ORPHAcode": f"Orphanet:{orpha_code}",
                         "Label": label
                     })
             
@@ -61,8 +61,8 @@ def write_csv(entries: list, csv_path: str) -> None:
         writer = csv.DictWriter(f, fieldnames=["ORPHAcode", "Label"])
         writer.writeheader()
         
-        # Sort by ORPHAcode for consistent output
-        sorted_entries = sorted(entries, key=lambda x: int(x["ORPHAcode"]))
+        # Sort by ORPHAcode for consistent output (extract numeric part for sorting)
+        sorted_entries = sorted(entries, key=lambda x: int(x["ORPHAcode"].replace("Orphanet:", "")))
         writer.writerows(sorted_entries)
 
 
@@ -87,7 +87,7 @@ def main() -> None:
     if clinical_group_entries:
         print("\nFirst 5 entries:")
         for i, entry in enumerate(clinical_group_entries[:5]):
-            print(f"  {i+1}. ORPHA:{entry['ORPHAcode']} - {entry['Label']}")
+            print(f"  {i+1}. {entry['ORPHAcode']} - {entry['Label']}")
 
 
 if __name__ == "__main__":
