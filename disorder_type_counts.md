@@ -1,0 +1,13 @@
+| DisorderType Value | Count |
+|---|---:
+| Disease | 4172 |
+| Malformation syndrome | 1788 |
+| Category | 1723 |
+| Clinical subtype | 839 |
+| Clinical group | 450 |
+| Morphological anomaly | 446 |
+| Etiological subtype | 195 |
+| Particular clinical situation in a disease or syndrome | 63 |
+| Histopathological subtype | 50 |
+| Clinical syndrome | 50 |
+| Biological anomaly | 11 |

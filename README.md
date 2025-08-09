@@ -1,5 +1,31 @@
 # Orphanet ORPHApackets
 
+### DisorderType Distribution (computed from repository JSON)
+
+The table below summarizes counts of `Orphapacket.DisorderType.value` across all JSON files in `json/`.
+
+To reproduce locally:
+
+```
+python make_disorder_type_counts.py
+```
+
+This generates `disorder_type_counts.csv` and `disorder_type_counts.md`.
+
+| DisorderType Value | Count |
+|---|---:
+| Disease | 4172 |
+| Malformation syndrome | 1788 |
+| Category | 1723 |
+| Clinical subtype | 839 |
+| Clinical group | 450 |
+| Morphological anomaly | 446 |
+| Etiological subtype | 195 |
+| Particular clinical situation in a disease or a syndrome | 63 |
+| Histopathological subtype | 50 |
+| Clinical syndrome | 50 |
+| Biological anomaly | 11 |
+
 An ORPHApacket is a formalized data sharing container embedding “pieces” of knowledge related to known rare disorders derived from the Orphanet knowledge database and ORDO (Orphanet Rare Diseases Ontology). The ORPHApacket format is encoded in JSON or YAML.
 
 An ORPHApacket includes among other (see Figure 2):
